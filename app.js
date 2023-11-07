@@ -7,12 +7,12 @@ const path = require("path");
 const session = require("express-session");
 const FileStore = require("session-file-store")(session);
 
-const userRouter = require("./src/routers/user.router");
+//const userRouter = require("./src/routers/index.router");
 const indexRouter = require("./src/routers/index.router");
-const potluckRouter = require("./src/routers/potluck.router");
-const attendeeRouter = require("./src/routers/attendee.router");
+//const potluckRouter = require("./src/routers/potluck.router");
+//const attendeeRouter = require("./src/routers/attendee.router");
 
-const { PORT } = process.env ?? 3000;
+const { PORT } = process.env ?? 3500;
 
 const app = express();
 
@@ -35,9 +35,9 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(session(sessionConfig));
 
 app.use("/", indexRouter);
-app.use("/users", userRouter);
-app.use("/potlucks", potluckRouter);
-app.use("/attendees", attendeeRouter);
+// app.use("/users", userRouter);
+// app.use("/potlucks", potluckRouter);
+// app.use("/attendees", attendeeRouter);
 
 app.get("/*", (req, res) => {
   res.redirect("/");
