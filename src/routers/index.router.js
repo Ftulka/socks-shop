@@ -1,20 +1,30 @@
 const router = require('express').Router();
 const renderTemplate = require('../lib/renderTemplate');
 const Index = require('../views/Index');
-const Bucket = require('../views');
-const { Order, Position } = require('../../db/models');
+const Bucket = require('../views/Bucket');
+const { Order, Position, Design } = require('../../db/models');
 
 router.get('/', (req, res) => {
   renderTemplate(Index, {}, res);
 });
 
 router.get('/bucket', async (req, res) => {
-  const order = await Order.findOne({
-    where: { userId: 1 },
-    include: [{ model: Position, raw: true }],
+  const data = await Order.findAll({
+    where: { userId: 2, isDone: false },
+    include: [
+      {
+        model: Position,
+        include: [
+          {
+            model: Design,
+          },
+        ],
+      },
+    ],
   });
-  console.log(order);
-  // renderTemplate(Bucket, {}, res);
+  const order = data.map((el) => el.get({ plain: true }));
+  console.log(JSON.stringify(data, null, 2));
+  renderTemplate(Bucket, { order: order[0] }, res);
 });
 
 module.exports = router;
