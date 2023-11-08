@@ -8,6 +8,8 @@ const Card = ({ design }) => (
     <div>{design.colorCode}</div>
     <div>{design.printUrl}</div>
     <div>{design.userId}</div>
+    <button type="button">Buy</button>
+    <button type="button">Add to favorites</button>
   </div>
 );
 module.exports = Card;
