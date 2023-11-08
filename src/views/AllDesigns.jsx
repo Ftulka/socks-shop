@@ -1,7 +1,7 @@
 const React = require("react");
 const Card = require("./Card");
 
-const Favorites = ({ designs }) => (
+const AllDesigns = ({ designs }) => (
   <div>
     <div>
       {designs.map((design, index) => (
@@ -10,4 +10,4 @@ const Favorites = ({ designs }) => (
     </div>
   </div>
 );
-module.exports = Favorites;
+module.exports = AllDesigns;
