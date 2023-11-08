@@ -2,9 +2,9 @@ const React = require('react');
 const Layout = require('./Layout');
 
 
-module.exports = function Index({ email }) {
+module.exports = function Index({ user }) {
   return (
-    <Layout email={email}>
+    <Layout user={user}>
       
 
       <div
