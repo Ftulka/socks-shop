@@ -1,6 +1,6 @@
 const React = require('react');
 
-module.exports = function Layout({ email }) {
+module.exports = function Layout( {user} ) {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
@@ -17,7 +17,7 @@ module.exports = function Layout({ email }) {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        {email ? (
+        {user ? (
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
@@ -33,12 +33,12 @@ module.exports = function Layout({ email }) {
 
               <li className="nav-item">
                 <a className="nav-link" href="/profile">
-                  Привет {email}!
+                  Привет {user.login}!
                 </a>
               </li>
 
               <li className="nav-item">
-                <a className="nav-link" href="/login/logout">
+                <a className="nav-link" href="/logout">
                   Выйти
                 </a>
               </li>
@@ -63,7 +63,7 @@ module.exports = function Layout({ email }) {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/registerclient">
+                <a className="nav-link" href="/register">
                   Регистрация
                 </a>
               </li>
