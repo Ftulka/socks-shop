@@ -1,4 +1,4 @@
-require("@babel/register"); // RV
+require("@babel/register"); 
 require("dotenv").config();
 
 const express = require("express");
@@ -9,14 +9,16 @@ const FileStore = require("session-file-store")(session);
 
 const { secureRoute, checkSession, checkUser } = require("./src/middlewares/checkUser");
 
-// const userRouter = require("./src/routers/index.router");
+//  const userRouter = require("./src/routers/index.router");
 const indexRouter = require("./src/routers/index.router");
-// const potluckRouter = require("./src/routers/potluck.router");
-// const attendeeRouter = require("./src/routers/attendee.router");
+const designRouter = require("./src/routers/designRouter");
+const orderRouter = require("./src/routers/orderRouter");
+const positionRouter = require("./src/routers/positionRouter");
 const loginRoutes = require("./src/routers/loginRoutes");// RV
 const regRoutes = require("./src/routers/regRoutes");// RV
 
 const dbConnectionCheck = require("./db/dbConnectCheck");// RV
+
 const { PORT } = process.env ?? 3500;
 
 const app = express();
@@ -43,6 +45,9 @@ app.use(session(sessionConfig));
 app.use(checkSession);// RV
 
 app.use("/", indexRouter);
+app.use("/designs", designRouter);
+app.use("/orders", orderRouter);
+app.use("/positions", positionRouter);
 // app.use("/users", userRouter);
 // app.use("/potlucks", potluckRouter);
 // app.use("/attendees", attendeeRouter);

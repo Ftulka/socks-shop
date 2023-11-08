@@ -20,43 +20,39 @@ module.exports = function Layout( {user} ) {
         {user ? (
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
-              
-                <li className="nav-item">
+              <li className="nav-item">
                 <a className="nav-link" href="/profile">
                   Генератор носков
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/ourobjects">
-                 Избранное
+                <a id='favoritesLink' className="nav-link" href="#">
+                  Избранное
                 </a>
               </li>
-             
-              
+
               <li className="nav-item">
                 <a className="nav-link" href="/profile">
                   Привет {user.login}!
                 </a>
               </li>
-            
+
               <li className="nav-item">
                 <a className="nav-link" href="/logout">
                   Выйти
                 </a>
               </li>
-                 <li className="nav-item">
+              <li className="nav-item">
                 <a className="nav-link" href="/ourmanagers">
                   Корзина
                 </a>
               </li>
-
             </ul>
           </div>
         ) : (
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
-              
-               <li className="nav-item">
+              <li className="nav-item">
                 <a className="nav-link" href="/profile">
                   Генератор носков
                 </a>
@@ -71,11 +67,11 @@ module.exports = function Layout( {user} ) {
                   Регистрация
                 </a>
               </li>
-              
             </ul>
           </div>
         )}
       </div>
+      <script defer src="/js/navbar.js" />
     </nav>
   );
 };

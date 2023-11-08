@@ -33,7 +33,6 @@ module.exports = function Layout({ children, user }) {
       <header>
         <Navbar user={user} />
       </header>
-
       <body>{children}</body>
       <footer className="bg-light text-center text-white">
 

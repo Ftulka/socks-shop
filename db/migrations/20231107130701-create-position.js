@@ -20,6 +20,7 @@ module.exports = {
           },
           key: "id",
         },
+        onDelete: "cascade",
       },
       designId: {
         allowNull: false,
