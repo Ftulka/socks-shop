@@ -1,14 +1,19 @@
 const router = require("express").Router();
 const renderTemplate = require("../lib/renderTemplate");
 const Index = require("../views/Index");
-const Sock = require("../views/components/Sock");
+
+const { checkUser } = require("../middlewares/checkUser");
 
 router.get("/", (req, res) => {
-  renderTemplate(Index, {}, res);
+  const user = req.session?.user;
+  renderTemplate(Index, { user }, res);
 });
 
-router.get("/sock", (req, res) => {
-  renderTemplate(Sock, {}, res);
+router.get("/logout", checkUser, (req, res) => {
+  req.session.destroy(() => {
+    res.clearCookie("myCookie");
+    res.redirect("/");
+  });
 });
 
 module.exports = router;
