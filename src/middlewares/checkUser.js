@@ -14,4 +14,9 @@ const secureRoute = (req, res, next) => {
   }
 };
 
-module.exports = { checkUser, secureRoute };
+const checkSession = (req, res, next) => {
+  console.log("В сессии=>", req.session);
+  next();
+};
+
+module.exports = { checkUser, secureRoute, checkSession };
