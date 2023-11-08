@@ -24,7 +24,7 @@ module.exports = function Layout({ children, email }) {
           integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
           crossOrigin="anonymous"
         />
-        <script defer src="/js/application.js" />
+        {/* <script defer src="/js/application.js" /> */}
         <link rel="stylesheet" href="/css/style.css" />
         <title>Solo</title>
       </head>
@@ -32,7 +32,11 @@ module.exports = function Layout({ children, email }) {
       <header>
         <Navbar email={email} />
       </header>
-      <body>{children}</body>
+      <body>
+        {children}
+      
+      
+      </body>
       <footer className="bg-light text-center text-white">
         <div
           className="text-center p-3"
