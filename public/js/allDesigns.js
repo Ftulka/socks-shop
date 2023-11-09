@@ -1,5 +1,10 @@
+const navBar = document.querySelector('#navbarNav');
+
 document.addEventListener('click', async (event) => {
   if (event.target.classList.value.includes('addToBucketButton')) {
+    if (!navBar.dataset.userId) {
+      window.location.href = '/login';
+    }
     event.preventDefault();
     const quantity = event.target
       .closest('div')
@@ -32,6 +37,9 @@ document.addEventListener('click', async (event) => {
   }
 
   if (event.target.classList.value.includes('addToFavoritesButton')) {
+    if (!navBar.dataset.userId) {
+      window.location.href = '/login';
+    }
     event.preventDefault();
     const userId = document.querySelector('#navbarNav').dataset.userid;
     const designId = event.target.closest('div.card').dataset.designid;
