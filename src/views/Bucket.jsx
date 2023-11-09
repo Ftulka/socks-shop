@@ -1,5 +1,5 @@
-const React = require('react');
-const Layout = require('./Layout');
+const React = require("react");
+const Layout = require("./Layout");
 
 const Bucket = ({ order, user }) => (
   <Layout user={user}>

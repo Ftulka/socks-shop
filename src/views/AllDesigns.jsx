@@ -4,15 +4,14 @@ const Layout = require("./Layout");
 
 const AllDesigns = ({ allDesigns, user }) => (
   <Layout user={user}>
-    <div style={{ display: "flex" }}>
+    <div style={{ display: "flex", flexwrap: "wrap" }}>
       {allDesigns.map((design, index) => (
         <div data-designid={design.id} className="card" style={{ width: 300 }}>
           <img src="/img/logo.png" className="card-img-top" alt="..." />
           <div className="card-body">
             <h5 className="card-title">{design.name}</h5>
             <p className="card-text">
-              Created by:
-              {design.User.login}
+              Создано пользователем: {design.User.login}
             </p>
             <label htmlFor="quantity">Quantity:</label>
             <input

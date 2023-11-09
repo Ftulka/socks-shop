@@ -11,18 +11,19 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-const message = {
-  from: "amber38@ethereal.email",
-  to: "amber38@ethereal.email",
-  subject: "Параметры заказа с сайта SOCKS SHOP",
-  text: "Текст письма",
+// const message = {
+//   from: "amber38@ethereal.email",
+//   to: "amber38@ethereal.email",
+//   subject: "Параметры заказа с сайта SOCKS SHOP",
+//   text: "Текст письма",
+// };
+// transporter.sendMail(message);
+
+const mailer = message => {
+  transporter.sendMail(message, (err, info) => {
+    console.log('Email sent: ', info);
+    if (err) return console.log('mailer err --------------->', err);
+  });
 };
-transporter.sendMail(message);
 
-// const mailer = message =>{
-//   transporter.sendMail(message(err,info)) =>
-//   if(err) return console.log('mailer err --------------->', err)
-//   console.log('Email sent: ', info);
-// }
-
-// module.exports = mailer
+module.exports = mailer;
