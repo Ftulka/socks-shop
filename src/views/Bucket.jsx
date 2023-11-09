@@ -1,8 +1,8 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-const Bucket = ({ order }) => (
-  <Layout>
+const Bucket = ({ order, user }) => (
+  <Layout user={user}>
     <table className="table table-bordered border-primary">
       <thead>
         <tr>

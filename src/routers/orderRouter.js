@@ -27,4 +27,21 @@ orderRouter.post('/', async (req, res) => {
   }
 });
 
+orderRouter.get('/user/:userId', async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const order = await Order.findOne({
+      where: { userId, isDone: false },
+    });
+
+    if (!order) {
+      return res.status(404).json({ error: 'Такого заказа не существует' });
+    }
+    res.json(order);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error });
+  }
+});
+
 module.exports = orderRouter;

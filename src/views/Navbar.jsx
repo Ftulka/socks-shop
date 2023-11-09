@@ -4,8 +4,7 @@ module.exports = function Layout({ user }) {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        {/* logo
-         */}
+        <img src="/img/logo.png" alt="logo" style={{ width: 45, height: 45 }} />
         <button
           className="navbar-toggler"
           type="button"
@@ -15,10 +14,14 @@ module.exports = function Layout({ user }) {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon" />
         </button>
         {user ? (
-          <div className="collapse navbar-collapse" id="navbarNav">
+          <div
+            className="collapse navbar-collapse"
+            id="navbarNav"
+            data-userid={user.id}
+          >
             <ul className="navbar-nav">
               <li className="nav-item">
                 <a className="nav-link" href="/profile">
@@ -47,6 +50,11 @@ module.exports = function Layout({ user }) {
                   Корзина
                 </a>
               </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/allDesigns">
+                  Галерея носков
+                </a>
+              </li>
             </ul>
           </div>
         ) : (
@@ -67,11 +75,15 @@ module.exports = function Layout({ user }) {
                   Регистрация
                 </a>
               </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/allDesigns">
+                  Галерея носков
+                </a>
+              </li>
             </ul>
           </div>
         )}
       </div>
-      <script defer src="/js/navbar.js" />
     </nav>
   );
 };

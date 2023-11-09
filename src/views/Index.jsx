@@ -28,7 +28,6 @@ module.exports = function Index({ user }) {
         </div>
         <br />
       </div>
-      <script defer src="/js/index.js" />
     </Layout>
   );
 };
