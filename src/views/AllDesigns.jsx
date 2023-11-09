@@ -5,7 +5,7 @@ const Layout = require("./Layout");
 
 const AllDesigns = ({ allDesigns, user }) => (
   <Layout user={user}>
-    <div style={{ display: "flex", flexwrap: "wrap" }}>
+    <div style={{ display: "flex", flexWrap: "wrap" }}>
       {allDesigns.map((design, index) => (
         <div data-designid={design.id} className="card" style={{ width: 400 }}>
           <Sock design={design} width="400" />

@@ -8,7 +8,7 @@ const Favorites = ({ favorites, user }) => (
     {favorites.length === 0 ? (
       <div>Здесь пока ничего нет, добавьте какой-нибудь носок в избранное</div>
     ) : (
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: "flex", flexWrap: "wrap" }}>
         {favorites.map((design, index) => (
           <Card design={design} />
         ))}

@@ -1,5 +1,7 @@
 const orderRouter = require("express").Router();
-const { User, Order, Position, Design } = require("../../db/models");
+const {
+  User, Order, Position, Design,
+} = require("../../db/models");
 const mailer = require("../../public/js/nodemailer");
 
 orderRouter.get("/:id", async (req, res) => {
