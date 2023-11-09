@@ -23,6 +23,7 @@ router.get("/logout", checkUser, (req, res) => {
 });
 
 router.get("/bucket", async (req, res) => {
+  const {user} = req.session
   const data = await Order.findAll({
     where: { userId: req.session.user.id, isDone: false },
     include: [
@@ -39,7 +40,7 @@ router.get("/bucket", async (req, res) => {
   if (data.length > 0) {
     const order = data.map((el) => el.get({ plain: true }));
     // console.log(JSON.stringify(data, null, 2));
-    renderTemplate(Bucket, { order: order[0] }, res);
+    renderTemplate(Bucket, { order: order[0], user }, res);
   } else {
     const data = await Order.create({
       address: "необходимо добавить поле для ввода адреса",
@@ -52,13 +53,15 @@ router.get("/bucket", async (req, res) => {
 });
 
 router.get("/favorites", async (req, res) => {
+  const {user} = req.session
   const data = await Favourite.findAll({
     where: { userId: req.session.user.id },
     include: [{ model: Design }, { model: User }],
   });
   const favorites = data.map((el) => el.get({ plain: true }));
-  console.log(JSON.stringify(favorites, null, 2));
-  renderTemplate(Favorites, { favorites }, res);
+  console.log("))))))))))))))))))))))))))))))))))))))",favorites)
+  //console.log(JSON.stringify(favorites, null, 2));
+  renderTemplate(Favorites, { favorites, user }, res);
 });
 
 router.get("/generator", async (req, res) => {
@@ -69,6 +72,7 @@ router.get("/generator", async (req, res) => {
 router.get('/onedesign/:id', async (req, res) => {
   try {
   const { id } = req.params
+  const {user} = req.session
   //console.log('iiiiidddddddd',id)
   const design = await Design.findByPk(
 
@@ -82,7 +86,7 @@ router.get('/onedesign/:id', async (req, res) => {
  
   console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!idesigggggggggggggg',design)
   
-  renderTemplate(Card2, { design}, res);
+  renderTemplate(Card2, { design, user}, res);
 } catch (error) {
   console.error(error);
 }

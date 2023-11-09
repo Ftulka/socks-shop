@@ -12,17 +12,22 @@ module.exports = function Index({ user }) {
           opacity: "0,7",
         }}
       >
-        <div className="mask" style={{ color: "rgba(0, 0, 0, 0.6)" }}>
+        <br />
+        <div className="mask" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
           <div className="d-flex justify-content-center align-items-center h-100">
+        
             <div className="text-white">
-              <h1 className="mb-5">
-                Самое время быть уникальным! Смоделируй свою любимую пару
-                носков!
-              </h1>
-              <div id="weather-container"></div>
+             
+              <h3 className="mb-3" style={{ padding: '10px'}}>Самое время быть уникальным!</h3>
+              <a className="btn btn-outline-light btn-lg" href="/generator" role="button">Смоделируй свою любимую пару
+                носков!</a>
+                
             </div>
+            
           </div>
+          <br />
         </div>
+       
         <br />
       </div>
     </Layout>
