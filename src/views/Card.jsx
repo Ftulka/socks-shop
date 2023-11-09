@@ -4,10 +4,10 @@ const Card = ({ design }) => (
   <div className="card" style={{ width: 300 }}>
     <img src="/img/logo.png" className="card-img-top" alt="..." />
     <div className="card-body">
-      <h5 className="card-title">{design.Design?.name}</h5>
+      <h5 className="card-title">{design.Design.name}</h5>
       <p className="card-text">
         Created by:
-        {design.User?.login}
+        {design.User.login}
       </p>
       <a href="#" className="btn btn-primary">
         Buy

@@ -65,10 +65,17 @@ router.get('/onedesign/:id', async (req, res) => {
   try {
   const { id } = req.params
   //console.log('iiiiidddddddd',id)
-  const design = await Design.findByPk(id, { raw: true })
+  const design = await Design.findByPk(
+
+    id, { plain: true, include: {
+      model: User
+    }},
+   
+     
+     )
    
  
-  console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!idesigggggggggggggg',design.pictureUrl)
+  console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!idesigggggggggggggg',design)
   
   renderTemplate(Card2, { design}, res);
 } catch (error) {

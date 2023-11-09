@@ -1,26 +1,36 @@
 const React = require('react');
  const Sock = require('./components/Sock')
-const Card2 = ({ design }) => (
-  <div className="card" style={{ width: 300 }}>
+ const Layout = require('./Layout');
 
-<div className="card-body">
+
+
+const Card2 = ({ design }) => (
+    <Layout>
+  <div className="card" style={{ width: 350, marginLeft: '20px', border: '2px solid purple', borderRadius: '15px' }}>
+<br />
+<div className="card-body" >
 <Sock design={design} />
     {/* <img src="/img/logo.png" className="card-img-top" alt="..." /> */}
-    
-      <h5 className="card-title">{design.name}</h5>
-      <p className="card-text">
-        Создан пользователем: 
-        {/* {design.login} */}
+    <br />
+      <h5 className="card-title" style={{  marginLeft: '15px'}}>Дизайн: {design.name}</h5>
+      <p className="card-text" style={{  marginLeft: '15px'}}>
+        Создан пользователем: {design.User.login}
       </p>
 
-      <a href="#" className="btn btn-primary">
+      <a href="#" className="btn btn-primary" style={{  marginLeft: '15px'}}>
         Купить
       </a>
-      <a href="#" className="btn btn-primary">
+      <br />
+      <br />
+      <a href="#" className="btn btn-primary" style={{  marginLeft: '15px'}}>
         Удалить из избранного
       </a>
+      <br />
     </div>
+    <br />
   </div>
+  <br />
+  </Layout>
 );
 module.exports = Card2;
 

@@ -1,6 +1,7 @@
 const React = require("react");
 const Navbar = require("./Navbar");
 
+
 module.exports = function Layout({ children, user }) {
   return (
     <html lang="ru">
