@@ -5,15 +5,14 @@ const Layout = require("./Layout");
 
 const AllDesigns = ({ allDesigns, user }) => (
   <Layout user={user}>
-    <div style={{ display: "flex" }}>
+    <div style={{ display: "flex", flexWrap: "wrap" }}>
       {allDesigns.map((design, index) => (
         <div data-designid={design.id} className="card" style={{ width: 400 }}>
           <Sock design={design} width="400" />
           <div className="card-body">
             <h5 className="card-title">{design.name}</h5>
             <p className="card-text">
-              Created by:
-              {design.User.login}
+              Создано пользователем: {design.User.login}
             </p>
             <label htmlFor="quantity">Quantity:</label>
             <input

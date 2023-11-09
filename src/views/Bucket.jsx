@@ -46,12 +46,12 @@ const Bucket = ({ order, user }) => (
           {order.address}
         </th>
         <th>{order.Positions.reduce((acc, el) => acc + el.quantity, 0)}</th>
-        <th>
-          {order.Positions.reduce((acc, el) => acc + el.quantity, 0)}
-          $
-        </th>
+        <th>{order.Positions.reduce((acc, el) => acc + el.quantity, 0)}$</th>
       </tr>
     </table>
+    <a href="#" style={{ display: "inline" }} className="btn btn-primary orderSend">
+      Отправить заказ
+    </a>
     <script src="/js/bucket.js" />
   </Layout>
 );
