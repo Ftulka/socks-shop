@@ -6,7 +6,7 @@ const router = express.Router();
 const renderTemplate = require("../lib/renderTemplate");
 const Register = require("../views/Register");
 
-const { User } = require("../../db/models");
+const { User, Order } = require("../../db/models");
 
 router.get("/", (req, res) => {
   renderTemplate(Register, null, res);
@@ -24,7 +24,11 @@ router.post("/", async (req, res) => {
       const newUser = (await User.create({ login, email, password: hash })).get(
         { plain: true }
       );
-
+      const order = await Order.create({
+        address: "",
+        isDone: false,
+        userId: newUser.id,
+      });
       const userClone = structuredClone(newUser);
       delete userClone.password;
       req.session.user = userClone;

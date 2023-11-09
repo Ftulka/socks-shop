@@ -1,5 +1,5 @@
 const positionRouter = require("express").Router();
-const { Position } = require("../../db/models");
+const { Position, Order } = require("../../db/models");
 
 positionRouter.delete("/:id", async (req, res) => {
   try {
@@ -23,6 +23,29 @@ positionRouter.post("/", async (req, res) => {
     const { orderId, designId, quantity } = req.body;
     const newPosition = await Position.create({ orderId, designId, quantity });
     res.json(newPosition);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error });
+  }
+});
+
+positionRouter.post("/:userId", async (req, res) => {
+  const { userId } = req.params;
+  const { designId } = req.body;
+  const quantity = req.query?.quantity || 1;
+  try {
+    const order = await Order.findOne({
+      where: {
+        userId,
+        isDone: false,
+      },
+    });
+    const position = await Position.create({
+      designId,
+      orderId: order.id,
+      quantity,
+    });
+    res.json(position.get({ plain: true }));
   } catch (error) {
     console.error(error);
     res.status(500).json({ error });
