@@ -1,5 +1,10 @@
+const navBar = document.querySelector('#navbarNav');
+
 document.addEventListener('click', async (event) => {
   if (event.target.classList.value.includes('addToBucketButton')) {
+    if (!navBar.dataset.userid) {
+      window.location.href = '/login';
+    }
     event.preventDefault();
     const quantity = event.target
       .closest('div')
@@ -32,6 +37,9 @@ document.addEventListener('click', async (event) => {
   }
 
   if (event.target.classList.value.includes('addToFavoritesButton')) {
+    if (!navBar.dataset.userid) {
+      window.location.href = '/login';
+    }
     event.preventDefault();
     const userId = document.querySelector('#navbarNav').dataset.userid;
     const designId = event.target.closest('div.card').dataset.designid;
@@ -49,7 +57,7 @@ document.addEventListener('click', async (event) => {
     if (newFavorite.id) {
       event.target.classList.add('disabled');
       event.target.style['background-color'] = 'transparent';
-      event.target.style['color'] = 'black';
+      event.target.style.color = 'black';
       event.target.innerText = 'Added';
     }
   }

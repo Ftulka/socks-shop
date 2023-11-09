@@ -1,7 +1,6 @@
 const React = require("react");
 const Navbar = require("./Navbar");
 
-
 module.exports = function Layout({ children, user }) {
   return (
     <html lang="ru">
@@ -28,19 +27,30 @@ module.exports = function Layout({ children, user }) {
           crossOrigin="anonymous"
         />
         <link rel="stylesheet" href="/css/style.css" />
-        <title>Solo</title>
+        <style>
+          {`
+            body {
+              display: flex;
+              flex-direction: column;
+              min-height: 100vh;
+            }
+            footer {
+              margin-top: auto;
+              color: purple; 
+            }
+          `}
+        </style>
+        <title>Socks</title>
       </head>
 
       <header>
         <Navbar user={user} />
       </header>
       <body>{children}</body>
-      <footer className="bg-light text-center text-white">
-
+      <footer className="bg-light text-center text-white" style={{ color: "purple" }}>
         <div className="text-center p-3" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
-          - почта: info@enjoysocks.ru
-          - Адрес: г. Москва, Шоссе Энтузиастов 12 ст2
-
+            <h5>почта: info@enjoysocks.ru</h5> 
+             <h5>Адрес: г. Москва, Шоссе Энтузиастов 12 ст2</h5> 
         </div>
       </footer>
     </html>

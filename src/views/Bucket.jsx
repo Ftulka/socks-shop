@@ -16,12 +16,20 @@ const Bucket = ({ order, user }) => (
       <tbody>
         {order.Positions.length > 0 ? (
           order.Positions.map((el, index) => (
-            <tr>
+            <tr data-positionid={el.id}>
               <th scope="row">{index + 1}</th>
               <th>{el.Design.name}</th>
               <th>1$</th>
               <th>{el.quantity}</th>
-              <th>{1 * el.quantity}$</th>
+              <th>
+                {1 * el.quantity}
+                $
+                <button
+                  type="button"
+                  className="btn-close"
+                  aria-label="Close"
+                />
+              </th>
             </tr>
           ))
         ) : (
@@ -38,9 +46,13 @@ const Bucket = ({ order, user }) => (
           {order.address}
         </th>
         <th>{order.Positions.reduce((acc, el) => acc + el.quantity, 0)}</th>
-        <th>{order.Positions.reduce((acc, el) => acc + el.quantity, 0)}$</th>
+        <th>
+          {order.Positions.reduce((acc, el) => acc + el.quantity, 0)}
+          $
+        </th>
       </tr>
     </table>
+    <script src="/js/bucket.js" />
   </Layout>
 );
 module.exports = Bucket;

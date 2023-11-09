@@ -1,13 +1,14 @@
 const React = require("react");
 const Card = require("./Card");
+const Sock = require("./components/Sock");
 const Layout = require("./Layout");
 
 const AllDesigns = ({ allDesigns, user }) => (
   <Layout user={user}>
     <div style={{ display: "flex", flexwrap: "wrap" }}>
       {allDesigns.map((design, index) => (
-        <div data-designid={design.id} className="card" style={{ width: 300 }}>
-          <img src="/img/logo.png" className="card-img-top" alt="..." />
+        <div data-designid={design.id} className="card" style={{ width: 400 }}>
+          <Sock design={design} width="400" />
           <div className="card-body">
             <h5 className="card-title">{design.name}</h5>
             <p className="card-text">

@@ -21,8 +21,21 @@ positionRouter.delete("/:id", async (req, res) => {
 positionRouter.post("/", async (req, res) => {
   try {
     const { orderId, designId, quantity } = req.body;
-    const newPosition = await Position.create({ orderId, designId, quantity });
-    res.json(newPosition);
+    const existingPosition = await Position.findOne({
+      where: { orderId, designId },
+    });
+    if (existingPosition) {
+      existingPosition.quantity += quantity;
+      existingPosition.save();
+      res.json(existingPosition);
+    } else {
+      const newPosition = await Position.create({
+        orderId,
+        designId,
+        quantity,
+      });
+      res.json(newPosition);
+    }
   } catch (error) {
     console.error(error);
     res.status(500).json({ error });

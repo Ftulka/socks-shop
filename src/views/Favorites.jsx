@@ -1,6 +1,7 @@
 const React = require('react');
 const Card = require('./Card');
 const Layout = require('./Layout');
+const Sock = require('./components/Sock')
 
 const Favorites = ({ favorites, user }) => (
   <Layout user={user}>

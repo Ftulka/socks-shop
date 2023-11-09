@@ -81,6 +81,7 @@ router.get("/generator", async (req, res) => {
 router.get('/onedesign/:id', async (req, res) => {
   try {
   const { id } = req.params
+  const {user} = req.session
   //console.log('iiiiidddddddd',id)
   const design = await Design.findByPk(
 
@@ -94,7 +95,7 @@ router.get('/onedesign/:id', async (req, res) => {
  
   console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!idesigggggggggggggg',design)
   
-  renderTemplate(Card2, { design}, res);
+  renderTemplate(Card2, { design, user}, res);
 } catch (error) {
   console.error(error);
 }
