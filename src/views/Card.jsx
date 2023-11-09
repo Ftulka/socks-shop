@@ -1,8 +1,9 @@
-const React = require('react');
+const React = require("react");
+const Sock = require("./components/Sock");
 
 const Card = ({ design }) => (
-  <div className="card" style={{ width: 300 }}>
-    <img src="/img/logo.png" className="card-img-top" alt="..." />
+  <div className="card" style={{ width: 400 }}>
+    <Sock design={design.Design} width="400" />
     <div className="card-body">
       <h5 className="card-title">{design.Design.name}</h5>
       <p className="card-text">

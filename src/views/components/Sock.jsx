@@ -19,7 +19,7 @@ const Sock = ({
       </metadata>
       <defs>
         <pattern
-          id="print"
+          id={`print${id || design.id}`}
           patternUnits="userSpaceOnUse"
           width={`${25 * width}`}
           height={`${25 * width}`}
@@ -48,7 +48,7 @@ const Sock = ({
         strokeWidth={`${Math.floor((1 / 4) * width)}`}
       >
         <path
-          fill="url(#print)"
+          fill={`url(#print${id || design.id})`}
           d="M5420 12789 c-41 -5 -154 -21 -250 -35 -138 -20 -243 -27 -495 -34
 -438 -13 -696 -25 -1355 -65 -311 -19 -719 -42 -907 -50 -436 -19 -603 -42
 -763 -105 -190 -75 -298 -169 -370 -325 -93 -197 -101 -369 -55 -1110 20 -310

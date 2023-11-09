@@ -7,7 +7,7 @@ const Generator = ({ user }) => (
     <form
       data-userid={user && `${user.id}`}
       id="gen-cont"
-      className="container d-flex justify-content-center"
+      className="container d-flex justify-content-center my-3"
     >
       <div id="btn-cont">
         <div>
