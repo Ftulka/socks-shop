@@ -1,10 +1,10 @@
-const React = require('react');
-const Card = require('./Card');
-const Layout = require('./Layout');
+const React = require("react");
+const Card = require("./Card");
+const Layout = require("./Layout");
 
 const AllDesigns = ({ allDesigns, user }) => (
   <Layout user={user}>
-    <div style={{ display: 'flex' }}>
+    <div style={{ display: "flex" }}>
       {allDesigns.map((design, index) => (
         <div data-designid={design.id} className="card" style={{ width: 300 }}>
           <img src="/img/logo.png" className="card-img-top" alt="..." />
@@ -26,15 +26,15 @@ const AllDesigns = ({ allDesigns, user }) => (
             <br />
             <a
               href="#"
-              style={{ display: 'inline' }}
+              style={{ display: "inline" }}
               className="btn btn-primary addToBucketButton"
             >
               Add to bucket
             </a>
-            {design.Favourites.find((el) => el.userId === user.id) ? (
+            {design.Favourites.find((el) => el.userId === user?.id) ? (
               <a
                 href="#"
-                style={{ display: 'inline' }}
+                style={{ display: "inline" }}
                 className="btn btn-secondary addToFavoritesButton disabled"
               >
                 In favorites
@@ -42,7 +42,7 @@ const AllDesigns = ({ allDesigns, user }) => (
             ) : (
               <a
                 href="#"
-                style={{ display: 'inline' }}
+                style={{ display: "inline" }}
                 className="btn btn-secondary addToFavoritesButton"
               >
                 Add to favorites
