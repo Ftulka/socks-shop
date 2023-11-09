@@ -4,7 +4,11 @@ module.exports = function Navbar({ user }) {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <img src="/img/logo.png" alt="logo" style={{ width: 45, height: 45 }} />
+      <a className="navbar-brand" href="/">
+          <img src="/img/logo.png" alt="Logo" style={{ width: '35px', height: '35px' }}/> {/* Замените путь и имя файла на ваш логотип */}
+        </a>
+        {/* logo
+         */}
         <button
           className="navbar-toggler"
           type="button"
@@ -23,26 +27,27 @@ module.exports = function Navbar({ user }) {
             data-userid={user.id}
           >
             <ul className="navbar-nav">
+            <li className="nav-item">
+                <a className="nav-link" href="/">
+                  На главную
+                </a>
+              </li>
+              
               <li className="nav-item">
-                <a className="nav-link" href="/generator">
+              <a className="nav-link" href="/generator">
                   Генератор носков
+                </a>
+              </li>
+              
+
+              <li className="nav-item">
+                <a className="nav-link" href="/bucket">
+                  Привет {user.login}!
                 </a>
               </li>
               <li className="nav-item">
                 <a id="favoritesLink" className="nav-link" href="/favorites">
                   Избранное
-                </a>
-              </li>
-
-              <li className="nav-item">
-                <a className="nav-link" href="/profile">
-                  Привет {user.login}!
-                </a>
-              </li>
-
-              <li className="nav-item">
-                <a className="nav-link" href="/logout">
-                  Выйти
                 </a>
               </li>
               <li className="nav-item">
@@ -55,11 +60,22 @@ module.exports = function Navbar({ user }) {
                   Галерея носков
                 </a>
               </li>
+              <li className="nav-item" >
+                <a className="nav-link" href="/logout">
+                  Выйти
+                </a>
+              </li>
+             
             </ul>
           </div>
         ) : (
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
+            <li className="nav-item">
+                <a className="nav-link" href="/">
+                  На главную
+                </a>
+              </li>
               <li className="nav-item">
                 <a className="nav-link" href="/generator">
                   Генератор носков

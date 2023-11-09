@@ -4,8 +4,8 @@ const Layout = require('./Layout');
 
 
 
-const Card2 = ({ design }) => (
-    <Layout>
+const Card2 = ({ design, user }) => (
+    <Layout user={user}>
   <div className="card" style={{ width: 350, marginLeft: '20px', border: '2px solid purple', borderRadius: '15px' }}>
 <br />
 <div className="card-body" >

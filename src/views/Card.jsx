@@ -5,17 +5,26 @@ const Card = ({ design }) => (
   <div className="card" style={{ width: 400 }}>
     <Sock design={design.Design} width="400" />
     <div className="card-body">
-      <h5 className="card-title">{design.Design.name}</h5>
+      <h5 className="card-title">Дизайн: {design.Design.name}</h5>
       <p className="card-text">
-        Created by:
-        {design.User.login}
+      Создан пользователем: {design.User.login}
       </p>
-      <a href="#" className="btn btn-primary">
-        Buy
+      
+         <a href="#" className="btn btn-primary" >
+        Купить
       </a>
+      <br />
+      <br />
       <a href="#" className="btn btn-primary">
-        Remove from favorites
+        Удалить из избранного
       </a>
+      <br />
+      <br />
+      <a href={'onedesign/' + design.Design.id} className="btn btn-primary">
+        Подробнее
+      </a>
+     
+     
     </div>
   </div>
 );
