@@ -1,5 +1,5 @@
 const React = require('react');
-// const Card2 = require('./components/Sock')
+ const Sock = require('./components/Sock')
 const Card2 = ({ design }) => (
   <div className="card" style={{ width: 300 }}>
 

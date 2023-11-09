@@ -6,6 +6,7 @@ const { checkUser } = require('../middlewares/checkUser');
 const { Order, Position, Design, Favourite, User } = require('../../db/models');
 const Favorites = require('../views/Favorites');
 const OneDesign = require('../views/OneDesign')
+const Card2 = require('../views/Card2')
 
 
 router.get('/', (req, res) => {
@@ -69,7 +70,7 @@ router.get('/onedesign/:id', async (req, res) => {
  
   console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!idesigggggggggggggg',design.pictureUrl)
   
-  renderTemplate(OneDesign, { design}, res);
+  renderTemplate(Card2, { design}, res);
 } catch (error) {
   console.error(error);
 }
