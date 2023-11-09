@@ -26,7 +26,7 @@ module.exports = function Navbar({ user }) {
                 </a>
               </li>
               <li className="nav-item">
-                <a id="favoritesLink" className="nav-link" href="#">
+                <a id="favoritesLink" className="nav-link" href="/favorites">
                   Избранное
                 </a>
               </li>
@@ -43,7 +43,7 @@ module.exports = function Navbar({ user }) {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/ourmanagers">
+                <a className="nav-link" href="/bucket">
                   Корзина
                 </a>
               </li>

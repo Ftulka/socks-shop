@@ -14,15 +14,23 @@ const Bucket = ({ order }) => (
         </tr>
       </thead>
       <tbody>
-        {order.Positions.map((el, index) => (
+        {order.Positions.length > 0 ? (
+          order.Positions.map((el, index) => (
+            <tr>
+              <th scope="row">{index + 1}</th>
+              <th>{el.Design.name}</th>
+              <th>1$</th>
+              <th>{el.quantity}</th>
+              <th>{1 * el.quantity}$</th>
+            </tr>
+          ))
+        ) : (
           <tr>
-            <th scope="row">{index + 1}</th>
-            <th>{el.Design.name}</th>
-            <th>1$</th>
-            <th>{el.quantity}</th>
-            <th>{1 * el.quantity}$</th>
+            <th scope="row" colSpan="5">
+              Нет позиций в заказе
+            </th>
           </tr>
-        ))}
+        )}
       </tbody>
       <tr>
         <th scope="row" colSpan="3">

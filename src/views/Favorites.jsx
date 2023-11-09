@@ -1,13 +1,14 @@
-const React = require("react");
-const Card = require("./Card");
+const React = require('react');
+const Card = require('./Card');
+const Layout = require('./Layout');
 
-const Favorites = ({ designs }) => (
-  <div>
-    <div>
-      {designs.map((design, index) => (
+const Favorites = ({ favorites }) => (
+  <Layout>
+    <div style={{ display: 'flex' }}>
+      {favorites.map((design, index) => (
         <Card design={design} />
       ))}
     </div>
-  </div>
+  </Layout>
 );
 module.exports = Favorites;
