@@ -2,7 +2,7 @@ const React = require('react');
 
 module.exports = function Layout( {user} ) {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary" >
       <div className="container-fluid">
         {/* logo
          */}
@@ -15,17 +15,23 @@ module.exports = function Layout( {user} ) {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon" ></span>
         </button>
         {user ? (
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link" href="/profile">
+          <div className="collapse navbar-collapse" id="navbarNav" >
+            <ul className="navbar-nav" >
+            
+            <li className="nav-item" >
+            <a className="nav-logo"  src="img/logo.png">
+            </a>
+              </li>
+              
+              <li className="nav-item" >
+                <a className="nav-link" href="/profile" style={{ color: 'purple'}}>
                   Генератор носков
                 </a>
               </li>
-              <li className="nav-item">
+              <li className="nav-item" >
                 <a id='favoritesLink' className="nav-link" href="#">
                   Избранное
                 </a>
@@ -52,6 +58,10 @@ module.exports = function Layout( {user} ) {
         ) : (
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
+            <li className="nav-item" >
+            <a className="nav-logo"  img id="sm" src="img/logo.png">
+            </a>
+              </li>
               <li className="nav-item">
                 <a className="nav-link" href="/profile">
                   Генератор носков

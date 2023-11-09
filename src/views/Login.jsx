@@ -19,6 +19,7 @@ module.exports = function Login() {
       </div>
       </div> */}
       <script defer src="/js/login.js" />
+      
       <div className="container-fluid">
         <div className="offset-md-4 col-md-4 offset-sm-3 col-sm-6">
           <div className="form-container">
