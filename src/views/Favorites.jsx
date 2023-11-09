@@ -5,11 +5,15 @@ const Sock = require('./components/Sock')
 
 const Favorites = ({ favorites, user }) => (
   <Layout user={user}>
-    <div style={{ display: 'flex' }}>
-      {favorites.map((design, index) => (
-        <Card design={design} />
-      ))}
-    </div>
+    {favorites.length === 0 ? (
+      <div>Здесь пока ничего нет, добавьте какой-нибудь носок в избранное</div>
+    ) : (
+      <div style={{ display: 'flex' }}>
+        {favorites.map((design, index) => (
+          <Card design={design} />
+        ))}
+      </div>
+    )}
   </Layout>
 );
 module.exports = Favorites;

@@ -75,7 +75,7 @@ form.addEventListener("submit", async (event) => {
         designId: designData.id,
       }),
     });
-    window.location = "/";
+    window.location = "/favorites";
   } else {
     alert("Ошибка сервера");
     window.location = "/";
@@ -113,7 +113,7 @@ btnCart.addEventListener("click", async (event) => {
         designId: designData.id,
       }),
     });
-    window.location = "/";
+    window.location = "/bucket";
   } else {
     alert("Ошибка сервера");
     window.location = "/";

@@ -18,18 +18,23 @@ module.exports = function Navbar({ user }) {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon" />
         </button>
         {user ? (
-          <div className="collapse navbar-collapse" id="navbarNav">
+          <div
+            className="collapse navbar-collapse"
+            id="navbarNav"
+            data-userid={user.id}
+          >
             <ul className="navbar-nav">
             <li className="nav-item">
                 <a className="nav-link" href="/">
                   На главную
                 </a>
               </li>
+              
               <li className="nav-item">
-                <a className="nav-link" href="/generator">
+              <a className="nav-link" href="/generator">
                   Генератор носков
                 </a>
               </li>
@@ -48,6 +53,11 @@ module.exports = function Navbar({ user }) {
               <li className="nav-item">
                 <a className="nav-link" href="/bucket">
                   Корзина
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/allDesigns">
+                  Галерея носков
                 </a>
               </li>
               <li className="nav-item" >
@@ -79,6 +89,11 @@ module.exports = function Navbar({ user }) {
               <li className="nav-item">
                 <a className="nav-link" href="/register">
                   Регистрация
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/allDesigns">
+                  Галерея носков
                 </a>
               </li>
             </ul>
