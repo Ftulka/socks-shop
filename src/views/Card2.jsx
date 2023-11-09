@@ -1,24 +1,28 @@
 const React = require('react');
-
-const Card = ({ design }) => (
+// const Card2 = require('./components/Sock')
+const Card2 = ({ design }) => (
   <div className="card" style={{ width: 300 }}>
-    <img src="/img/logo.png" className="card-img-top" alt="..." />
-    <div className="card-body">
-      <h5 className="card-title">{design.Design?.name}</h5>
+
+<div className="card-body">
+<Sock design={design} />
+    {/* <img src="/img/logo.png" className="card-img-top" alt="..." /> */}
+    
+      <h5 className="card-title">{design.name}</h5>
       <p className="card-text">
-        Created by:
-        {design.User?.login}
+        Создан пользователем: 
+        {/* {design.login} */}
       </p>
+
       <a href="#" className="btn btn-primary">
-        Buy
+        Купить
       </a>
       <a href="#" className="btn btn-primary">
-        Remove from favorites
+        Удалить из избранного
       </a>
     </div>
   </div>
 );
-module.exports = Card;
+module.exports = Card2;
 
 // {
 //     "id": 1,

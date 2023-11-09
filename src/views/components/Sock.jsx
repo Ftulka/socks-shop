@@ -2,7 +2,7 @@ const React = require("react");
 
 const Sock = ({
   id,
-  design = { pictureUrl: "", colorCode: "#FFFFFF", printUrl: "" },
+  design= { pictureUrl: "", colorCode: "#FFFFFF", printUrl: "" },
   width = "400",
 }) => (
   <div id={`sock${id || design.id}`}>

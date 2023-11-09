@@ -5,6 +5,8 @@ const Bucket = require('../views/Bucket');
 const { checkUser } = require('../middlewares/checkUser');
 const { Order, Position, Design, Favourite, User } = require('../../db/models');
 const Favorites = require('../views/Favorites');
+const OneDesign = require('../views/OneDesign')
+
 
 router.get('/', (req, res) => {
   const user = req.session?.user;
@@ -56,5 +58,27 @@ router.get('/favorites', async (req, res) => {
   console.log(JSON.stringify(favorites, null, 2));
   renderTemplate(Favorites, { favorites }, res);
 });
+
+
+router.get('/onedesign/:id', async (req, res) => {
+  try {
+  const { id } = req.params
+  //console.log('iiiiidddddddd',id)
+  const design = await Design.findByPk(id, { raw: true })
+   
+ 
+  console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!idesigggggggggggggg',design.pictureUrl)
+  
+  renderTemplate(OneDesign, { design}, res);
+} catch (error) {
+  console.error(error);
+}
+});
+
+
+
+
+
+
 
 module.exports = router;
