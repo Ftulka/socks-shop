@@ -1,6 +1,6 @@
 const React = require('react');
- const Sock = require('./components/Sock')
- const Layout = require('./Layout');
+const Sock = require('./components/Sock')
+const Layout = require('./Layout');
 
 
 
@@ -17,7 +17,7 @@ const Card2 = ({ design }) => (
         Создан пользователем: {design.User.login}
       </p>
 
-      <a href="#" className="btn btn-primary" style={{  marginLeft: '15px'}}>
+      <a href="" className="btn btn-primary" style={{  marginLeft: '15px'}}>
         Купить
       </a>
       <br />
