@@ -1,6 +1,6 @@
-const React = require('react');
+const React = require("react");
 
-module.exports = function Layout({ user }) {
+module.exports = function Navbar({ user }) {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
@@ -21,7 +21,7 @@ module.exports = function Layout({ user }) {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="/profile">
+                <a className="nav-link" href="/generator">
                   Генератор носков
                 </a>
               </li>
@@ -53,7 +53,7 @@ module.exports = function Layout({ user }) {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="/profile">
+                <a className="nav-link" href="/generator">
                   Генератор носков
                 </a>
               </li>
@@ -71,7 +71,6 @@ module.exports = function Layout({ user }) {
           </div>
         )}
       </div>
-      <script defer src="/js/navbar.js" />
     </nav>
   );
 };
