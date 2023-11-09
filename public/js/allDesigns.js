@@ -2,7 +2,7 @@ const navBar = document.querySelector('#navbarNav');
 
 document.addEventListener('click', async (event) => {
   if (event.target.classList.value.includes('addToBucketButton')) {
-    if (!navBar.dataset.userId) {
+    if (!navBar.dataset.userid) {
       window.location.href = '/login';
     }
     event.preventDefault();
@@ -37,7 +37,7 @@ document.addEventListener('click', async (event) => {
   }
 
   if (event.target.classList.value.includes('addToFavoritesButton')) {
-    if (!navBar.dataset.userId) {
+    if (!navBar.dataset.userid) {
       window.location.href = '/login';
     }
     event.preventDefault();
@@ -57,7 +57,7 @@ document.addEventListener('click', async (event) => {
     if (newFavorite.id) {
       event.target.classList.add('disabled');
       event.target.style['background-color'] = 'transparent';
-      event.target.style['color'] = 'black';
+      event.target.style.color = 'black';
       event.target.innerText = 'Added';
     }
   }
